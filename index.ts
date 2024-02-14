@@ -37,8 +37,8 @@ const imageName = "demo-cloudrun-app";
 const image = new docker.Image("example", {
   imageName: pulumi.interpolate`gcr.io/${gcp.config.project}/${imageName}:latest`,
   build: {
-    dockerfile: "../wwwroot/Dockerfile",
-    context: "../wwwroot", 
+    dockerfile: "wwwroot/Dockerfile",
+    context: "wwwroot", 
     platform: "linux/amd64" },
   });
 
